@@ -1,5 +1,10 @@
+from tkinter import Place
 from django.db import models
 import uuid
+from datetime import datetime
+
+def upload_path(instance, filename):
+    return '/'.join(['files', str(instance.title)], filename)
 
 # Create your models here.
 class User_Login(models.Model):
@@ -37,4 +42,57 @@ class Basic_Metadata(models.Model):
     derived_from = models.CharField(max_length=150, unique=False)
     
     hop_history = models.CharField(max_length=150, unique=False)
+    uploaded_at = models.DateTimeField(default=datetime.now, blank=True)
+
+class NewsItem_Text(models.Model):
+    
+    metadata = models.OneToOneField(
+    Basic_Metadata,
+    on_delete=models.CASCADE,
+    )
+    
+    title = models.CharField(max_length=150, unique=False)  
+    sutien = models.CharField(max_length=150, unique=False) 
+    authors = models.CharField(max_length=150, unique=False) 
+    editors = models.CharField(max_length=150, unique=False)
+    
+    # texto em si
+    news_text = models.CharField(max_length=15000, unique=False) 
+    
+    keywords = models.CharField(max_length=1500, unique=False) 
+    related_news = models.CharField(max_length=1500, unique=False) 
+    
+    # pra qual editoria isso vai
+    related_publisher = models.CharField(max_length=350, unique=False) 
+    
+    # em qual qual midia isso circulou
+    posted_on = models.CharField(max_length=150, unique=False)
+
+class NewsItem_Photo(models.Model):
+    
+    metadata = models.OneToOneField(
+    Basic_Metadata,
+    on_delete=models.CASCADE,
+    )
+    
+    title = models.CharField(max_length=150, unique=False)
+    place = models.CharField(max_length=350, unique=False) 
+    photographer = models.CharField(max_length=350, unique=False)
+    keywords = models.CharField(max_length=350, unique=False)
+    used_equipament = models.CharField(max_length=350, unique=False)
+    description = models.CharField(max_length=350, unique=False)
+    image = models.FileField(upload_to=upload_path, blank=True, null=True)
+
+class NewsItem_Graphics(models.Model):
+    
+    metadata = models.OneToOneField(
+    Basic_Metadata,
+    on_delete=models.CASCADE,
+    )
+    
+    description = models.CharField(max_length=350, unique=False)
+    data = models.CharField(max_length=350, unique=False)
+    type_graphic = models.CharField(max_length=350, unique=False)
+    designer = models.CharField(max_length=350, unique=False)
+    graphic_image = models.FileField(upload_to=upload_path, blank=True, null=True)
     

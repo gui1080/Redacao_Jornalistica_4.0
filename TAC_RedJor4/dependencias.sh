@@ -12,6 +12,7 @@ source venv/bin/activate
 python3 manage.py makemigrations
 python3 manage.py migrate
 pip3 install djangorestframework
+pip3 install django-cors-headers
 pip3 install Django
 echo "Rodando Django -> 'python3 manage.py runserver'"
 echo "Tchau $USER"
