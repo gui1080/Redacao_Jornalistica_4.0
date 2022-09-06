@@ -18,6 +18,10 @@ class LoginView(generics.CreateAPIView):
     
     queryset = User_Login.objects.all()
     serializer_class = LoginUserSerializer
+    
+    # "autenticação" fácil
+    # front -> GET -> passa pelos usuários e os logins, devolve o id.
+    # passa os ids nos requests, o backend só ve se isso existe. Se existe, tá autenticado.
 
     def post(self, request, *args, **kwargs):
         id = request.data['id']
@@ -25,7 +29,9 @@ class LoginView(generics.CreateAPIView):
         password = request.data['password']
         email = request.data['email']
         User_Login.objects.create(id=id, name=name, password=password, email=email)
-        return HttpResponse({'message': 'User Created'}, status=200)
+        
+        # retorna o ID quando vc faz post de usuário
+        return HttpResponse({'message': 'User Created', 'id': id}, status=200)
 
 # NewsItem (Texto)
 class TextView(generics.CreateAPIView):
@@ -38,6 +44,15 @@ class TextView(generics.CreateAPIView):
         return Response(text_news)
 
     def post(self, request, *args, **kwargs):
+        
+        id = request.data['id']
+        
+        try:
+            meu_cadastro = User_Login.objects.get(id = id)
+        except User_Login.DoesNotExist:
+            meu_cadastro = None
+            return HttpResponse({'message': 'User not found!'}, status=404)
+        
         metadata = request.data['metadata']
         title = request.data['title']
         sutien = request.data['sutien']
@@ -63,6 +78,15 @@ class PhotoView(generics.CreateAPIView):
         return Response(photo_news)
 
     def post(self, request, *args, **kwargs):
+        
+        id = request.data['id']
+        
+        try:
+            meu_cadastro = User_Login.objects.get(id = id)
+        except User_Login.DoesNotExist:
+            meu_cadastro = None
+            return HttpResponse({'message': 'User not found!'}, status=404)
+        
         metadata = request.data['metadata']
         title = request.data['title']
         place = request.data['place']
@@ -86,6 +110,15 @@ class GraphicsView(generics.CreateAPIView):
         return Response(graphic_news)
 
     def post(self, request, *args, **kwargs):
+        
+        id = request.data['id']
+        
+        try:
+            meu_cadastro = User_Login.objects.get(id = id)
+        except User_Login.DoesNotExist:
+            meu_cadastro = None
+            return HttpResponse({'message': 'User not found!'}, status=404)
+        
         metadata = request.data['metadata']
         description = request.data['description']
         data = request.data['data']
