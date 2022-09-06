@@ -1,6 +1,7 @@
 # Redação Jornalística 4.0
 
 Backend em Django Python para TAC, 2022/01 redação Jornalística 4.0
+
 Guilherme Braga 17/0162290
 
 ## Dependências
