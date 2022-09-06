@@ -5,7 +5,15 @@ Guilherme Braga 17/0162290
 
 ## Dependências
 
-O script *./dependencias.sh* cria um ambiente virtual, o executa e baixa dependências. 
+Criar ambiente virtual
+
+> python3 -m venv venv
+
+Entrar no ambiente virtual
+
+> source venv/bin/activate
+
+### Rodar script que baixa dependências
 
 Para dar permissão para rodar o script, execute:
 
