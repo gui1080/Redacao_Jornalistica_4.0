@@ -16,6 +16,21 @@ class CadastroView(generics.CreateAPIView):
     queryset = User_Login.objects.all()
     serializer_class = LoginUserSerializer
 
+    # recupera ID
+    def get(self, request, *args, **kwargs):
+        
+        password_recuperado = request.data['password']
+        email_recuperado = request.data['email']
+        
+        try:
+            meu_cadastro = User_Login.objects.get(password = password_recuperado, email = email_recuperado)
+        except User_Login.DoesNotExist:
+            meu_cadastro = None
+            return HttpResponse({'message': 'User not found!'}, status=404)
+        
+        return HttpResponse({'message': meu_cadastro}, status=200)
+        
+    # faz usuário
     def post(self, request, *args, **kwargs):
         #user_id = request.data['user_id']
         user_id = request.POST.get('user_id', False)
