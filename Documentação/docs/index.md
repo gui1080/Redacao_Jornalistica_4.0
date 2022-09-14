@@ -2,6 +2,10 @@
 
 Backend em Django Python para TAC, 2022/01 redação Jornalística 4.0
 
+Guilherme Braga Pinto 17/0162290.
+
+Professor Edison Ishikawa.
+
 ## Comandos
 
 * `mkdocs serve` - Rodar na pasta "documentação" para ler a documentação. 
@@ -18,6 +22,27 @@ Dependência para rodar documentação:
 
 ```python
 pip install mkdocs
+```
+
+## Arquivo de Dependências
+
+Arquivo com atalho para confirguação de ambiente virtual. Basicamente baixa o Django se necessário e vê se o Python está na versão correta!
+
+```python
+
+echo "Hello $USER"
+echo "Se certifique que seu Python3 está em dia (pelo menos Python 3.9.7)"
+python3 --version
+pip3 install --upgrade pip3
+python3 manage.py makemigrations
+python3 manage.py migrate
+pip3 install djangorestframework
+pip3 install django-cors-headers
+pip3 install Django
+echo "Rodando Django -> 'python3 manage.py runserver'"
+echo "Tchau $USER"
+python3 manage.py runserver
+
 ```
 
 ## Layout do projeto
@@ -66,11 +91,30 @@ pip install mkdocs
 └── manage.py
 ```
 
+## Proposta de Desenvolvimento
+
+![Sprints](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documentac%CC%A7a%CC%83o/plano.jpeg?raw=true)
+
+## Mapeamento teórico do conteúdo
+
+![Content Mapping](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documentac%CC%A7a%CC%83o/tac_content_mapping.png?raw=true)
+
 ## Modelos
 
+![Banco de Dados Proposto](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documentac%CC%A7a%CC%83o/bd.jpeg?raw=true)
 
+Para a primeira iteração do trabalho, focou-se em implementar a funcionalidade de adição de texto, imagem e gráficos por parte do jornalista.
 
 ### User_Login
+
+```python
+
+    user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=50, unique=True, null=False)
+    password = models.CharField(max_length=150, unique=False, null=False)
+    email = models.CharField(max_length=50, unique=True, null=False)
+    
+```
 
 #### GET
 
@@ -87,12 +131,71 @@ Metadados comuns entre as mídias a serem adicionadas.
 
 ### NewsItem_Text
 
-Herda metadados de "Basic_Metadata".
+Cadastro de texto por parte do jornalista.
+
+Herda metadados de "Basic_Metadata". Recebe id do usuário para verificação.
+
+Adiciona os campos:
+
+```python
+
+    title = models.CharField(max_length=150, unique=False)  
+    sutien = models.CharField(max_length=150, unique=False) 
+    authors = models.CharField(max_length=150, unique=False) 
+    editors = models.CharField(max_length=150, unique=False)
+    
+    # texto em si
+    news_text = models.CharField(max_length=15000, unique=False) 
+    
+    keywords = models.CharField(max_length=1500, unique=False) 
+    related_news = models.CharField(max_length=1500, unique=False) 
+    
+    # pra qual editoria isso vai
+    related_publisher = models.CharField(max_length=350, unique=False) 
+    
+    # em qual qual midia isso circulou
+    posted_on = models.CharField(max_length=150, unique=False)
+
+```
 
 ### NewsItem_Photo
 
-Herda metadados de "Basic_Metadata".
+Cadastro de imagem por parte do jornalista.
+
+Herda metadados de "Basic_Metadata". Recebe id do usuário para verificação.
+
+Adiciona os campos:
+
+```python
+
+    title = models.CharField(max_length=150, unique=False)
+    place = models.CharField(max_length=350, unique=False) 
+    photographer = models.CharField(max_length=350, unique=False)
+    keywords = models.CharField(max_length=350, unique=False)
+    used_equipament = models.CharField(max_length=350, unique=False)
+    description = models.CharField(max_length=350, unique=False)
+
+    # arquivo!
+    image = models.FileField(upload_to=upload_path, blank=True, null=True)
+
+```
 
 ### NewsItem_Graphics
 
-Herda metadados de "Basic_Metadata".
+Cadastro de gráfico por parte do jornalista.
+
+Herda metadados de "Basic_Metadata". Recebe id do usuário para verificação.
+
+Adiciona os campos:
+
+```python
+
+    description = models.CharField(max_length=350, unique=False)
+    data = models.CharField(max_length=350, unique=False)
+    type_graphic = models.CharField(max_length=350, unique=False)
+    designer = models.CharField(max_length=350, unique=False)
+    
+    # arquivo!
+    graphic_image = models.FileField(upload_to=upload_path, blank=True, null=True)
+    
+```
