@@ -1,8 +1,12 @@
 # Backend da Primeira Sprint
 
+Feito em Django/Python, usando [Django REST Framework](https://www.django-rest-framework.org/).
+
 ## Comandos
 
 * `mkdocs serve` - Rodar na pasta "documentação" para ler a documentação. 
+
+* `mkdocs build` - Rodar na pasta "documentação" para exportar a documentação.
 
 * `python3 -m venv venv` - Criar ambiente virtual.
 
@@ -99,6 +103,8 @@ python3 manage.py runserver
 
 Para a primeira iteração do trabalho, focou-se em implementar a funcionalidade de adição de texto, imagem e gráficos por parte do jornalista.
 
+O retorno dos dados ocorre por meio de um "json.dump()" para cada método.
+
 ### User_Login
 
 ```python
@@ -113,6 +119,8 @@ Para a primeira iteração do trabalho, focou-se em implementar a funcionalidade
 #### GET
 
 Dado par usuário e senha, retorna seu objeto de usuário. Passa seu id nas requisições para adicionar itens de mídia novos.
+
+![Exemplo](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documenta%C3%A7%C3%A3o/producao.png?raw=true)
 
 #### POST
 
