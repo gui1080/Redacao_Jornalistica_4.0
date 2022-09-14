@@ -4,7 +4,7 @@ from .models import User_Login, NewsItem_Text, NewsItem_Photo, NewsItem_Graphics
 class LoginUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User_Login
-        fields = ('id', 'name', 'password', 'email')
+        fields = ('user_id', 'name', 'password', 'email')
         
 
 class NewsItem_TextSerializer(serializers.ModelSerializer):

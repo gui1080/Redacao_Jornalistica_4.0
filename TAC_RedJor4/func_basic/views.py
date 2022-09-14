@@ -20,14 +20,14 @@ class CadastroView(generics.CreateAPIView):
     serializer_class = LoginUserSerializer
 
     def post(self, request, *args, **kwargs):
-        id = request.data['id']
+        user_id = request.data['user_id']
         name = request.data['name']
         password = request.data['password']
         email = request.data['email']
         User_Login.objects.create(id=id, name=name, password=password, email=email)
         
         # retorna o ID quando vc faz post de usuário
-        return HttpResponse({'message': 'User Created', 'id': id}, status=200)
+        return HttpResponse({'message': 'User Created', 'user_id': user_id}, status=200)
 
 # NewsItem (Texto)
 class TextView(generics.CreateAPIView):
@@ -41,10 +41,10 @@ class TextView(generics.CreateAPIView):
 
     def post(self, request, *args, **kwargs):
         
-        id = request.data['id']
+        user_id = request.data['user_id']
         
         try:
-            meu_cadastro = User_Login.objects.get(id = id)
+            meu_cadastro = User_Login.objects.get(user_id = user_id)
         except User_Login.DoesNotExist:
             meu_cadastro = None
             return HttpResponse({'message': 'User not found!'}, status=404)
