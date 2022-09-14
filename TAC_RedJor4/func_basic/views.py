@@ -14,7 +14,7 @@ from rest_framework.response import Response
 # Create your views here.
 
 # Usuários
-class LoginView(generics.CreateAPIView):
+class CadastroView(generics.CreateAPIView):
     
     queryset = User_Login.objects.all()
     serializer_class = LoginUserSerializer
