@@ -18,10 +18,6 @@ class CadastroView(generics.CreateAPIView):
     
     queryset = User_Login.objects.all()
     serializer_class = LoginUserSerializer
-    
-    # "autenticação" fácil
-    # front -> GET -> passa pelos usuários e os logins, devolve o id.
-    # passa os ids nos requests, o backend só ve se isso existe. Se existe, tá autenticado.
 
     def post(self, request, *args, **kwargs):
         id = request.data['id']
