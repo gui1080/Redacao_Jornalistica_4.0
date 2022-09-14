@@ -8,9 +8,6 @@ from django.http import HttpResponse
 from rest_framework import generics
 from rest_framework.response import Response
 
-# dependencias 
-# pip3 install djangorestframework
-
 # Create your views here.
 
 # Usuários
@@ -20,11 +17,12 @@ class CadastroView(generics.CreateAPIView):
     serializer_class = LoginUserSerializer
 
     def post(self, request, *args, **kwargs):
-        user_id = request.data['user_id']
+        #user_id = request.data['user_id']
+        user_id = request.POST.get('user_id', False)
         name = request.data['name']
         password = request.data['password']
         email = request.data['email']
-        User_Login.objects.create(id=id, name=name, password=password, email=email)
+        User_Login.objects.create(user_id=user_id, name=name, password=password, email=email)
         
         # retorna o ID quando vc faz post de usuário
         return HttpResponse({'message': 'User Created', 'user_id': user_id}, status=200)
@@ -75,10 +73,10 @@ class PhotoView(generics.CreateAPIView):
 
     def post(self, request, *args, **kwargs):
         
-        id = request.data['id']
+        user_id = request.data['user_id']
         
         try:
-            meu_cadastro = User_Login.objects.get(id = id)
+            meu_cadastro = User_Login.objects.get(user_id = user_id)
         except User_Login.DoesNotExist:
             meu_cadastro = None
             return HttpResponse({'message': 'User not found!'}, status=404)
@@ -107,10 +105,10 @@ class GraphicsView(generics.CreateAPIView):
 
     def post(self, request, *args, **kwargs):
         
-        id = request.data['id']
+        user_id = request.data['user_id']
         
         try:
-            meu_cadastro = User_Login.objects.get(id = id)
+            meu_cadastro = User_Login.objects.get(user_id = user_id)
         except User_Login.DoesNotExist:
             meu_cadastro = None
             return HttpResponse({'message': 'User not found!'}, status=404)
