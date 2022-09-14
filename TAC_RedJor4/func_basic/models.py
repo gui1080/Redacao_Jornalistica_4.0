@@ -9,14 +9,14 @@ def upload_path(instance, filename):
 # Create your models here.
 class User_Login(models.Model):
     
-    user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user_id = models.CharField(max_length=50, primary_key=True)
     name = models.CharField(max_length=50, unique=True, null=False)
     password = models.CharField(max_length=150, unique=False, null=False)
     email = models.CharField(max_length=50, unique=True, null=False)
     
 class Basic_Metadata(models.Model):
     
-    id = models.CharField(max_length=50, primary_key=True, null=False, default=uuid.uuid4, editable=False)
+    id = models.CharField(max_length=50, primary_key=True, null=False)
     version = models.CharField(max_length=150, unique=False)
     language = models.CharField(max_length=150, unique=False)
     catalog_ref = models.CharField(max_length=150, unique=False)
