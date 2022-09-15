@@ -91,15 +91,15 @@ python3 manage.py runserver
 
 ## Proposta de Desenvolvimento
 
-![Sprints](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documentac%CC%A7a%CC%83o/plano.jpeg?raw=true)
+![Sprints](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documenta%C3%A7%C3%A3o/plano.jpeg?raw=true)
 
 ## Mapeamento teórico do conteúdo
 
-![Content Mapping](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documentac%CC%A7a%CC%83o/tac_content_mapping.png?raw=true)
+![Content Mapping](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documenta%C3%A7%C3%A3o/tac_content_mapping.png?raw=true)
 
 ## Modelos
 
-![Banco de Dados Proposto](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documentac%CC%A7a%CC%83o/bd.jpeg?raw=true)
+![Banco de Dados Proposto](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documenta%C3%A7%C3%A3o/bd.jpeg?raw=true)
 
 Para a primeira iteração do trabalho, focou-se em implementar a funcionalidade de adição de texto, imagem e gráficos por parte do jornalista.
 

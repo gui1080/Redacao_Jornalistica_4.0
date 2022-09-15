@@ -2,7 +2,25 @@
 
 ## Motivação
 
-teste 
+Redações Jornalísticas são um caso de estudo ideal para a modelagem de um processo intensivo em conhecimento, por conta da velocidade na qual os processos devem lidar com uma grande quantidade de informação além de uma grande quantidade de partes envolvidas.
+
+É muito complexo o processo de observar e mapear como este o workflow funciona na vida real. Se mostra recorrente não só que o processo não ocorra da mesma maneira entre iterações, mas que o mesmo mude estruturalmente em tempo de execução, diferenciando-se de um processo clássico. Neste momento surgem Decisões de difícil resolução, assim é necessário um sistema que documente e dê suporte para a visualização e execução de uma tarefa no contexto da Redação Jornalística moderna.
+
+# Processo Estruturados e Processos Não Estruturados
+
+As seguintes imagens apresentam por objetivo diferenciar um Processso Estruturado de um Processo Não Estruturado.
+
+![Estruturado](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documenta%C3%A7%C3%A3o/estruturado.jpeg?raw=true)
+
+Um processo Estruturado apresenta uma divisão clara entre as partes envolvidas, o que elas fazem e quando elas realizam a sua ação.
+
+![Não Estruturado](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documenta%C3%A7%C3%A3o/n_estruturado.jpeg?raw=true)
+
+Esta nova maneira de representar um processo acaba por ser mais completa ao definir o que acontece no caso de estudo em questão. Quando uma informação chega na Redação Jornalística, ela deve ser rápidamente tratada. Caso a informação que se deseje publicar ou armazenar seja tratada por meio de um processo Estruturado, existe uma chance muito grande que se perca o momento ideal de publicação da matéria, ou que ela acabe "presa" em uma parte do processo. Na realidade o ambiente descrito é altamente dinâmico e colaborativo, logo a estrutura de "Piscina para Lazer" em contraste com a estrutura de "Piscina Olímpica" é mais eficiênte ao levantar o funcionamento deste ambiente. Na "Piscina para Lazer", os processos são boias que flutuam podendo avançar ou regredir em termos de execução, e os Agentes envolvidos acabam por colaborar com uma tarefa na medida na qual a urgência existe.
+
+É com essa mentalidade que se enxergou o desenvolvimento deste software de suporte, também visando suporte semântico.
+
+*Fonte das imagens: João Pedro Souza Nunes.*
 
 ### Visão do Produto
 
@@ -45,15 +63,12 @@ Cinco principais usuários: Jornalista , Fotógrafo, Revisor, Editor e CDOC.
 #### 5 - Centro de documentação (CDOC)
 
 - Arquiva todas as matérias jornalísticas publicadas ou não, bem como as outras mídias.
+- É muito comum que um processo na Redação Jornalística realize um trabalho mas que não seja vinculado na mídia.
 
 ![Documentacao](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documenta%C3%A7%C3%A3o/cdoc.png?raw=true)
 
-## Execução
-
-teste
-
 ## Estrutura do projeto final
 
-teste
+A visão do projeto para a primeira sprint prevê a construção de uma API em Django/Python, para que exista suporte a comunicação com Frontent feito em React. A linguagem Python se mostra mais moldável e foi excolhida com o objetivo de dar suporte para anotação semântica de informações, com o uso de ontologias.
 
 ![Arquitetura](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documenta%C3%A7%C3%A3o/arq.jpg?raw=true)
