@@ -4,28 +4,8 @@ Backend em Django Python para TAC, 2022/01 redação Jornalística 4.0
 
 Guilherme Braga 17/0162290
 
-Para mais detalhes, ver pasta "Documentação". Feito com MKDOcs.
+Para mais detalhes, ver pasta "Documentação". Feito com MKDOcs. 
 
-## Dependências
+A documentação está no seguinte [link](https://gui1080.github.io/Redacao_Jornalistica_4.0/). Feito com MKDocs e hospedado no github (branch *gh-pages*). 
 
-Criar ambiente virtual
-
-> python3 -m venv venv
-
-Entrar no ambiente virtual
-
-> source venv/bin/activate
-
-### Rodar script que baixa dependências
-
-Para dar permissão para rodar o script, execute:
-
-> chmod +x dependencias.sh
-
-Para verificar as permissões do script de dependências, execute:
-
-> ls -l dependencias.sh
-
-Para rodar, execute:
-
-> ./dependencias.sh
+Apresentação do trabalho dia 20/09/2022
