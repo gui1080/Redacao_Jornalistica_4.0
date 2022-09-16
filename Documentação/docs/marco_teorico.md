@@ -4,7 +4,19 @@
 
 Redações Jornalísticas são um caso de estudo ideal para a modelagem de um processo intensivo em conhecimento, por conta da velocidade na qual os processos devem lidar com uma grande quantidade de informação além de uma grande quantidade de partes envolvidas.
 
+Isso também reflete os padrões de consumo atuais, adaptado a um ambiente influenciado pela internet. Isso não só afeta como a informação circula em uma sociedade, mas como ela é produzida. Ou seja, afeta diretamente o Jornalista como uma profissão.
+
 É muito complexo o processo de observar e mapear como este o workflow funciona na vida real. Se mostra recorrente não só que o processo não ocorra da mesma maneira entre iterações, mas que o mesmo mude estruturalmente em tempo de execução, diferenciando-se de um processo clássico. Neste momento surgem Decisões de difícil resolução, assim é necessário um sistema que documente e dê suporte para a visualização e execução de uma tarefa no contexto da Redação Jornalística moderna.
+
+# Metodologia 
+
+O desenvolvimento do sistema se baseia no Scrum, uma metodologia iterativa e incremental que se dá tendo em base a elaboração inicial da Visão do Produto para que uma lista de tarefas (Backlog) possa ser definida. 
+
+Definiu-se as seguintes iterações até a obtenção do produto final:
+
+- Sprint 1 – foco na elaboração de um CMS tradicional otimizado para jornalismo web com interface para anotações semânticas, baseando-se no modelo de Banco de Dados News ML 2.
+- Sprint 2 – integração com módulo semântico. 
+- Sprint 3 –  integração com módulo de workflow inteligente. 
 
 # Processo Estruturados e Processos Não Estruturados
 
