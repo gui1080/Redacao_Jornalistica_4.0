@@ -201,3 +201,13 @@ Adiciona os campos:
     graphic_image = models.FileField(upload_to=upload_path, blank=True, null=True)
     
 ```
+
+# Frontend da Primeira Sprint
+
+![Img1](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documenta%C3%A7%C3%A3o/front1.jpeg?raw=true)
+
+![Img2](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documenta%C3%A7%C3%A3o/front2.jpeg?raw=true)
+
+![Img3](https://github.com/gui1080/Redacao_Jornalistica_4.0/blob/master/Documenta%C3%A7%C3%A3o/front3.jpeg?raw=true)
+
+*Fonte: Matheus Augusto*

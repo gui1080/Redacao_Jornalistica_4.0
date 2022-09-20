@@ -32,7 +32,7 @@ Esta nova maneira de representar um processo acaba por ser mais completa ao defi
 
 É com essa mentalidade que se enxergou o desenvolvimento deste software de suporte, também visando suporte semântico.
 
-*Fonte das imagens: João Pedro Souza Nunes.*
+*Fonte das imagens: João Pedro Sousa Nunes.*
 
 ### Visão do Produto
 
